@@ -168,6 +168,48 @@
 
   .note{ margin-top:1.25rem; max-width:50ch; }
 
+  /* ---------- next show ---------- */
+  .next{ max-width:44rem; }
+  .next .date{
+    font-family:var(--display);
+    font-weight:400;
+    text-transform:uppercase;
+    line-height:0.95;
+    font-size:clamp(2rem, 1rem + 5vw, 4rem);
+    margin:0 0 .5rem;
+  }
+  .next .venue{
+    font-weight:700;
+    font-size:clamp(1.05rem, 0.95rem + 0.6vw, 1.4rem);
+    margin:0;
+  }
+
+  /* ---------- played list ---------- */
+  .played{
+    list-style:none;
+    margin:0;
+    padding:0;
+    max-width:44rem;
+  }
+  .played li{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.25rem 1rem;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:.85rem 0;
+    border-top:3px solid var(--paper);
+  }
+  .played li:last-child{ border-bottom:3px solid var(--paper); }
+  .played .where{ font-weight:700; }
+  .played .when{
+    font-size:0.8rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--yellow);
+    white-space:nowrap;
+  }
+
   /* ---------- footer ---------- */
   footer{
     background:var(--ink);
@@ -206,6 +248,16 @@
   </div>
 </section>
 
+<section class="band band--yellow">
+  <div class="wrap">
+    <h2 class="heading">Next show</h2>
+    <div class="next">
+      <p class="date">Saturday 29 August</p>
+      <p class="venue">Protest at UW&ndash;Madison</p>
+    </div>
+  </div>
+</section>
+
 <section class="band band--dark">
   <div class="wrap">
     <h2 class="heading">How this started</h2>
@@ -213,6 +265,21 @@
       <p>On a hot summer day in 2015, two Madison vegans crossed paths for the first time in the Hawthorne Library parking lot. They had come to protest against the now-infamous research puppy mill, Ridglan Farms, and they quickly discovered that they had another thing they were also both serious about: music.</p>
       <p>Liminal Aberration is the mercurial duo project of Jeff Stanek on keyboards and Aaron Yarmel on strings. The commitment that first brought them together still runs through the work: pieces about the dogs who mean so much to us, and about the people who risk everything to secure their happiness, safety, and freedom.</p>
     </div>
+  </div>
+</section>
+
+<section class="band band--dark">
+  <div class="wrap">
+    <h2 class="heading">Where we've played</h2>
+    <ul class="played">
+      <li><span class="where">Garver Feed Mill, Madison</span> <span class="when">21 June 2026</span></li>
+      <li><span class="where">Xizhou Xie&rsquo;s gallery, Madison</span> <span class="when">21 June 2026</span></li>
+      <li><span class="where">Protest at UW&ndash;Madison</span> <span class="when">20 June 2026</span></li>
+      <li><span class="where">Vigil at Ridglan Farms</span> <span class="when">19 April 2026</span></li>
+      <li><span class="where">Ridglan Farms open rescue</span> <span class="when">18 April 2026</span></li>
+      <li><span class="where">Ridglan Farms open rescue</span> <span class="when">15 March 2026</span></li>
+      <li><span class="where">Madison Vegan Fest</span> <span class="when">4 October 2025</span></li>
+    </ul>
   </div>
 </section>
 
