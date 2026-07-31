@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liminal Aberration — Jeff Stanek &amp; Aaron Yarmel</title>
+<meta name="description" content="Liminal Aberration is the duo project of Jeff Stanek on keyboards and Aaron Yarmel on strings. Experimental fusion from Madison, Wisconsin.">
+
+<meta property="og:title" content="Liminal Aberration">
+<meta property="og:description" content="The duo project of Jeff Stanek on keyboards and Aaron Yarmel on strings.">
+<meta property="og:image" content="poster.jpg">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --red:      #F20D0D;
+    --yellow:   #FFE800;
+    --magenta:  #F312D6;
+    --blue:     #2A1DF5;
+    --green:    #12F53C;
+    --ink:      #000000;
+    --paper:    #FFFFFF;
+
+    --display: "Anton", "Haettenschweiler", "Arial Narrow", Impact, sans-serif;
+    --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation:none !important; transition:none !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    font-size:clamp(1rem, 0.95rem + 0.35vw, 1.2rem);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:70rem;
+    margin:0 auto;
+    padding:0 clamp(1.25rem, 5vw, 4rem);
+  }
+
+  .band{ padding:clamp(3rem, 8vw, 6.5rem) 0; }
+  .band--red{ background:var(--red); color:var(--ink); }
+  .band--yellow{ background:var(--yellow); color:var(--ink); }
+  .band--blue{ background:var(--blue); color:var(--paper); }
+
+  /* ---------- hero ---------- */
+  .hero{ display:block; }
+  .hero img{
+    display:block;
+    width:100%;
+    height:clamp(15rem, 62vh, 40rem);
+    object-fit:cover;
+    object-position:center 42%;
+  }
+
+  /* ---------- wordmark ---------- */
+  .wordmark{
+    font-family:var(--display);
+    font-weight:400;
+    text-transform:uppercase;
+    line-height:0.86;
+    letter-spacing:-0.01em;
+    font-size:clamp(2.75rem, 12vw, 8.5rem);
+    margin:0;
+  }
+  .wordmark span{ display:inline-block; }
+  .l1{ color:var(--yellow); }
+  .l2{ color:var(--paper); }
+  .l3{ color:var(--magenta); }
+
+  .standfirst{
+    font-weight:700;
+    font-size:clamp(1.05rem, 0.9rem + 0.9vw, 1.6rem);
+    max-width:34ch;
+    margin:1.5rem 0 0;
+    line-height:1.3;
+  }
+  .standfirst em{ font-style:normal; background:var(--ink); color:var(--yellow); padding:0 .25em; }
+
+  /* ---------- headings ---------- */
+  .heading{
+    font-family:var(--display);
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:1;
+    font-size:clamp(1.9rem, 1.2rem + 3.2vw, 4rem);
+    margin:0 0 1.75rem;
+  }
+  .band--yellow .heading{ color:var(--ink); }
+  .band--blue .heading{ color:var(--yellow); }
+  .band--dark .heading{ color:var(--green); }
+
+  .prose{ max-width:62ch; }
+  .prose p{ margin:0 0 1.35rem; }
+  .prose p:last-child{ margin-bottom:0; }
+  .prose p:first-of-type::first-line{ font-weight:700; }
+
+  /* ---------- members ---------- */
+  .members{
+    display:grid;
+    gap:clamp(1rem, 3vw, 2rem);
+    grid-template-columns:1fr;
+  }
+  @media (min-width:44rem){
+    .members{ grid-template-columns:1fr 1fr; }
+  }
+  .member{
+    border:4px solid var(--ink);
+    padding:clamp(1.25rem, 3vw, 2rem);
+    background:var(--yellow);
+  }
+  .member h3{
+    font-family:var(--display);
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    line-height:1;
+    margin:0 0 .35rem;
+  }
+  .member .role{
+    display:block;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:0.8rem;
+    margin-bottom:1rem;
+  }
+  .member a{
+    font-weight:700;
+    text-decoration:none;
+    border-bottom:4px solid var(--magenta);
+    word-break:break-word;
+  }
+  .member a:hover,
+  .member a:focus-visible{ background:var(--magenta); color:var(--paper); }
+
+  /* ---------- big link ---------- */
+  .biglink{
+    display:inline-block;
+    font-family:var(--display);
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:clamp(1.6rem, 1rem + 3.5vw, 3.5rem);
+    line-height:1;
+    text-decoration:none;
+    color:var(--yellow);
+    background:var(--ink);
+    padding:.35em .5em;
+    border:4px solid var(--yellow);
+  }
+  .band--blue .biglink{ border-color:var(--paper); }
+  .biglink:hover,
+  .biglink:focus-visible{ background:var(--magenta); color:var(--ink); }
+
+  .note{ margin-top:1.5rem; max-width:52ch; }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:3rem 0;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  footer .rule{
+    height:12px;
+    display:flex;
+    margin-bottom:2rem;
+  }
+  footer .rule i{ flex:1; }
+  footer .rule i:nth-child(1){ background:var(--yellow); }
+  footer .rule i:nth-child(2){ background:var(--magenta); }
+  footer .rule i:nth-child(3){ background:var(--blue); }
+  footer .rule i:nth-child(4){ background:var(--green); }
+  footer .rule i:nth-child(5){ background:var(--red); }
+
+  :focus-visible{ outline:4px solid var(--green); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="poster.jpg" alt="Jeff Stanek and Aaron Yarmel in a high-contrast pop-art portrait, Aaron playing violin, over a red background with the words Liminal Aberration.">
+</header>
+
+<section class="band band--red">
+  <div class="wrap">
+    <h1 class="wordmark">
+      <span class="l1">Limin</span><span class="l2">a</span><span class="l3">l</span><br>
+      <span class="l1">Aber</span><span class="l3">ration</span>
+    </h1>
+    <p class="standfirst">Jeff Stanek on keyboards. Aaron Yarmel on strings. <em>Experimental fusion</em> out of Madison, Wisconsin.</p>
+  </div>
+</section>
+
+<section class="band band--dark">
+  <div class="wrap">
+    <h2 class="heading">How this started</h2>
+    <div class="prose">
+      <p>On a hot summer day in 2015, two Madison vegans crossed paths for the first time in the Hawthorne Library parking lot. They had come to protest against the now-infamous research puppy mill, Ridglan Farms, and they quickly discovered that they had another thing they were also both serious about: music.</p>
+      <p>Liminal Aberration is the mercurial duo project of Jeff Stanek on keyboards and Aaron Yarmel on strings. For this year's Madison Vegan Fest, they'll be presenting a new story-with-music that calls back to what first brought them together: their commitment to animal liberation. This mini-drama is inspired by the dogs who mean so much to us, and by the people who risk everything to secure their happiness, safety, and freedom. Come listen to the whole thing or just stop by as you please for nice tunes, spiffy sounds, and good vegan vibes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--yellow">
+  <div class="wrap">
+    <h2 class="heading">The duo</h2>
+    <div class="members">
+      <div class="member">
+        <h3>Jeff Stanek</h3>
+        <span class="role">Keyboards &amp; synth</span>
+        <p><a href="https://pianowithjeff.com/the-teacher/">pianowithjeff.com</a></p>
+      </div>
+      <div class="member">
+        <h3>Aaron Yarmel</h3>
+        <span class="role">Violin &amp; mandolin</span>
+        <p><a href="https://www.aaronyarmel.com">aaronyarmel.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--dark">
+  <div class="wrap">
+    <h2 class="heading">Watch</h2>
+    <a class="biglink" href="https://www.instagram.com/liminalaberration/">Instagram &rarr;</a>
+    <p class="note">Live clips and works in progress go up here first.</p>
+  </div>
+</section>
+
+<section class="band band--blue">
+  <div class="wrap">
+    <h2 class="heading">Booking</h2>
+    <p class="note" style="margin-top:0">For shows, collaborations, and anything else, send us a message.</p>
+    <!-- Swap the link below for a mailto: address once you have a working band email.
+         Example: <a class="biglink" href="mailto:you@example.com">Email us &rarr;</a> -->
+    <a class="biglink" href="https://www.instagram.com/liminalaberration/">Message on Instagram &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <div class="rule" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p>Liminal Aberration &middot; Madison, Wisconsin</p>
+  </div>
+</footer>
+
+</body>
+</html>
